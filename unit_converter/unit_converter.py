@@ -20,7 +20,7 @@ def convert_units(value,unit_to, unit_from):
 
 st.title("Unit converter")
 
-value = st.number_input("Enter you value")
+value = st.number_input("Enter you value" , min_value=1.0 , step = 1.0)
 
 unit_from = st.selectbox("Convert From:", ["meters", "kilometers", "grams", "kilograms"])  
 unit_to = st.selectbox("Convert To:", ["meters", "kilometers", "grams", "kilograms"])  
