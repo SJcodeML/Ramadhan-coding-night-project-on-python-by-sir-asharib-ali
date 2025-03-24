@@ -18,7 +18,8 @@ if st.button("Generate Money"):
 
 def get_side_hustle():
     try:
-        response =requests.get("http://127.0.0.1:8000/side_hustles?apikey=123456789")
+        # response =requests.get("http://127.0.0.1:8000/side_hustles?apikey=123456789")
+        response =requests.get("https://ramadhan-coding-night-project-on-python-by-sir-asharib-ali.vercel.app/side_hustles?apikey=123456789")
         if response.status_code == 200:
             hustles= response.json()
             return hustles["side_hustle"]    
@@ -38,10 +39,13 @@ def get_money_quotes():
     try:
         # you need to deploy this api on the server then it will work otherwise you need to activate an run the api key from the project 
         # in next projects we will deploy this key then may be it will work check it 
-        response = requests.get("http://127.0.0.1:8000/money_quotes?apikey=123456789") 
+
+        # response = requests.get("http://127.0.0.1:8000/money_quotes?apikey=123456789")  this is the URl without deploying on vercel 
+        response = requests.get("https://ramadhan-coding-night-project-on-python-by-sir-asharib-ali.vercel.app/money_quotes?apikey=123456789") 
+        # above url after deploying on vercel from fast-api project and url's are written in deployment_vercel project
         if response.status_code == 200:
             quotes = response.json()
-            return quotes
+            return quotes["money_quote"]
     except:
         return ("Something went wrong")
 
