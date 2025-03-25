@@ -3,6 +3,9 @@ import random
 import time
 import requests
 
+# url of the deployed application 
+# https://money-making-machine-and-usage-of-apis-by-sidra-jabin.streamlit.app/
+
 
 def generate_money():
     return random.randint(1 , 1000)
